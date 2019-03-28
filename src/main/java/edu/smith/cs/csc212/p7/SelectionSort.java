@@ -2,6 +2,13 @@ package edu.smith.cs.csc212.p7;
 
 import edu.smith.cs.csc212.adtr.ListADT;
 
+/**
+ * Sort by finding the minimum from the data and bringing it to front,
+ * then finding the minimum of the rest of the data and bringing it to the second position
+ * and so on.
+ * @author sivan
+ *
+ */
 public class SelectionSort {
 	public static void selectionSort(ListADT<Integer> input) {
 		for (int i = 0; i < input.size() - 1; i++) {
