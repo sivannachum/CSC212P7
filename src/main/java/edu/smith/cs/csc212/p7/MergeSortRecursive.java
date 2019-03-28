@@ -9,11 +9,11 @@ public class MergeSortRecursive {
 		if (size < 2) {
 			return input;
 		}
-		int mid = size/2;
+		int mid = size/2 - 1;
 		ListADT<Integer> left = input.slice(0, mid);
-		ListADT<Integer> right = input.slice(mid, size);
-		mergeSort(left);
-		mergeSort(right);
+		ListADT<Integer> right = input.slice(mid + 1, size - 1);
+		left = mergeSort(left);
+		right = mergeSort(right);
 		return combine(left, right);
 	}
 	public static ListADT<Integer> combine(ListADT<Integer> left, ListADT<Integer> right){
