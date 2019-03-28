@@ -56,6 +56,86 @@ public class TestSorting {
 		BubbleSort.bubbleSort(sortMe);
 		Assert.assertTrue(checkSorted(sortMe));
 	}
+	
+	@Test
+	public void testSelectionSort() {
+		// See if the data can be reversed:
+		ListADT<Integer> sortMe = new JavaList<>();
+		for (int y : data) {
+			sortMe.addBack(y);
+		}
+		SelectionSort.selectionSort(sortMe);
+		Assert.assertTrue(checkSorted(sortMe));
+		
+		Random rand = new Random(13);
+		// For good measure, let's shuffle it and sort it again to see if that works, too.
+		sortMe.shuffle(rand);
+		System.out.println(sortMe.toJava());
+		SelectionSort.selectionSort(sortMe);
+		Assert.assertTrue(checkSorted(sortMe));
+	}
+	
+	@Test
+	public void testClassSelectionSort() {
+		// See if the data can be reversed:
+		ListADT<Integer> sortMe = new JavaList<>(Arrays.asList(35, 88, 11, 47, 14, 24, 41, 62, 27));
+		
+		SelectionSort.selectionSort(sortMe);
+		Assert.assertTrue(checkSorted(sortMe));
+	}
 
+	@Test
+	public void testInsertionSort() {
+		// See if the data can be reversed:
+		ListADT<Integer> sortMe = new JavaList<>();
+		for (int y : data) {
+			sortMe.addBack(y);
+		}
+		sortMe = InsertionSort.insertionSort(sortMe);
+		Assert.assertTrue(checkSorted(sortMe));
+		
+		Random rand = new Random(13);
+		// For good measure, let's shuffle it and sort it again to see if that works, too.
+		sortMe.shuffle(rand);
+		System.out.println(sortMe.toJava());
+		sortMe = InsertionSort.insertionSort(sortMe);
+		Assert.assertTrue(checkSorted(sortMe));
+	}
+	
+	@Test
+	public void testClassInsertionSort() {
+		// See if the data can be reversed:
+		ListADT<Integer> sortMe = new JavaList<>(Arrays.asList(35, 88, 11, 47, 14, 24, 41, 62, 27));
+		
+		sortMe = InsertionSort.insertionSort(sortMe);
+		Assert.assertTrue(checkSorted(sortMe));
+	}
+	
+	@Test
+	public void testMergeSortRecursive() {
+		// See if the data can be reversed:
+		ListADT<Integer> sortMe = new JavaList<>();
+		for (int y : data) {
+			sortMe.addBack(y);
+		}
+		sortMe = MergeSortRecursive.mergeSort(sortMe);
+		Assert.assertTrue(checkSorted(sortMe));
+		
+		Random rand = new Random(13);
+		// For good measure, let's shuffle it and sort it again to see if that works, too.
+		sortMe.shuffle(rand);
+		System.out.println(sortMe.toJava());
+		sortMe = MergeSortRecursive.mergeSort(sortMe);
+		Assert.assertTrue(checkSorted(sortMe));
+	}
+	
+	@Test
+	public void testClassMergeSortRecursive() {
+		// See if the data can be reversed:
+		ListADT<Integer> sortMe = new JavaList<>(Arrays.asList(35, 88, 11, 47, 14, 24, 41, 62, 27));
+		
+		sortMe = MergeSortRecursive.mergeSort(sortMe);
+		Assert.assertTrue(checkSorted(sortMe));
+	}
 
 }
