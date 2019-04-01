@@ -21,6 +21,7 @@ public class TestSorting {
 				System.err.println("items out of order: "+items.getIndex(i)+", "+items.getIndex(i+1) + " at index="+i);
 				return false;
 			}
+			System.out.println(items.getIndex(i));
 		}
 		return true;
 	}
